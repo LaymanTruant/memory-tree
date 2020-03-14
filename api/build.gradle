@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+}
+
+group 'layman.truant'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.flywaydb:flyway-core'
+    compile 'org.postgresql:postgresql'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'com.google.cloud:google-cloud-storage:1.103.0'
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+//    testCompile 'org.springframework.security:spring-security-test'
+}

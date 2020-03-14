@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    username: postgres
+    password: password
+    show-sql: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: validate
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+    # acceptable ddl-auto values: validate, update, create, create-drop
+
+flyway:
+  enabled: true
+  locations: db/migration, classpath:layman/truant/database/migration
+
+memory-tree:
+#  security:
+#    clientSecret: TheBytesOfThisSecretAreNeededToMoreThan256TTTTT
+#    jwtExpirationInSeconds: 600
+  googleCloud:
+    project: ${PROJECT}
+  cloudStorage:
+    imagesBucket: ${API_IMAGE_FILES_BUCKET_NAME}
+
+
+logging.level:
+  root: INFO
+  org.springframework: INFO
+
+server.port: ${PORT:3001}
